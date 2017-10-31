@@ -1,42 +1,23 @@
-#
-# Be sure to run `pod lib lint TTFortuneWheel.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+
 #
 
 Pod::Spec.new do |s|
   s.name             = 'TTFortuneWheel'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TTFortuneWheel.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'Fortune spinning wheel that supports custom drawing.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Fortune spinning wheel that supports custom drawing.
                        DESC
 
-  s.homepage         = 'https://github.com/efraim_budusan@yahoo.com/TTFortuneWheel'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://tapptitude.com/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'efraim_budusan@yahoo.com' => 'efraim_budusan@tapptitude.com' }
-  s.source           = { :git => 'https://github.com/efraim_budusan@yahoo.com/TTFortuneWheel.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Efraim Budusan' => 'efraim.budusan@tapptitude.com' }
+  s.source           = { :git => 'https://github.com/tapptitude/TTFortuneWheel.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '9.0'
+  s.requires_arc = true
+  s.source_files = 'TTFortuneWheel/*.{swift}'
+  s.resource_bundles = {
+    'TTFortuneWheel' => ['TTFortuneWheel/Resources/**/*']
+  }
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'TTFortuneWheel/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'TTFortuneWheel' => ['TTFortuneWheel/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
