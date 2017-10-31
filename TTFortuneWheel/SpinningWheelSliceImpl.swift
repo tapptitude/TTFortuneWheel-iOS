@@ -13,8 +13,8 @@ import UIKit
 public class FortuneWheelSlice: FortuneWheelSliceProtocol {
     
     public enum Style {
-        case orange
-        case white
+        case dark
+        case light
     }
     
     public var title: String
@@ -22,26 +22,23 @@ public class FortuneWheelSlice: FortuneWheelSliceProtocol {
     
     public var backgroundColor: UIColor? {
         switch style {
-        case .orange: return TTUtils.uiColor(from: 0xFA9726)
-        case .white: return UIColor.white
+        case .dark: return TTUtils.uiColor(from: 0x320A51)
+        case .light: return UIColor.white
         }
     }
     
     public var fontColor: UIColor {
         switch style {
-        case .orange: return UIColor.white
-        case .white: return TTUtils.uiColor(from: 0x373737)
+        case .dark: return UIColor.white
+        case .light: return TTUtils.uiColor(from: 0x320A51)
         }
     }
     
     public var font: UIFont {
-        switch style {
-        case .orange: return UIFont.systemFont(ofSize: fontSize, weight: .regular)
-        case .white: return UIFont.systemFont(ofSize: fontSize, weight: .heavy)
-        }
+        return UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }
     
-    public var style:Style = .orange
+    public var style:Style = .dark
     
     public init(title:String) {
         self.title = title

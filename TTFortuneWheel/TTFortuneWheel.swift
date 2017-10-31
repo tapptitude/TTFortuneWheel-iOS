@@ -16,14 +16,14 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     open var slices:[FortuneWheelSliceProtocol]!
     
     //UIConfiguration of the main frame
-    open var frameStroke:StrokeInfo = StrokeInfo(color: TTUtils.uiColor(from: 0xFF8900), width: 4.5)
+    open var frameStroke:StrokeInfo = StrokeInfo(color: TTUtils.uiColor(from: 0x6E17B3), width: 8)
     open var shadow:NSShadow?
     
     lazy private var animator:SpinningWheelAnimator = SpinningWheelAnimator(withObjectToAnimate: self)
     private(set) var sliceDegree:CGFloat?
     private(set) var wheelLayer:FortuneWheelLayer!
 
-    init(frame: CGRect, slices:[FortuneWheelSliceProtocol]) {
+    public init(frame: CGRect, slices:[FortuneWheelSliceProtocol]) {
         super.init(frame: frame)
         self.slices = slices
         self.shadow = defaultShadow

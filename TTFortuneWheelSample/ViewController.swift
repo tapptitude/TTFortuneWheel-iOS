@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         spinningWheel.slices.enumerated().forEach { (pair) in
             let slice = pair.element as! FortuneWheelSlice
             let offset = pair.offset
-            slice.style = offset % 2 == 1 ? .orange : .white
+            slice.style = offset % 2 == 1 ? .dark : .light
         }
     }
     
@@ -42,7 +42,5 @@ class ViewController: UIViewController {
             print(finished)
         })
     }
-
-
 }
 

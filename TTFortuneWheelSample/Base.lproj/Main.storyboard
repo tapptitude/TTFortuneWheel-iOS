@@ -27,12 +27,13 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-LZ-YE8">
-                                <rect key="frame" x="133" y="260" width="109" height="128"/>
+                                <rect key="frame" x="133" y="264" width="109" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="17" maxX="0.0" maxY="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="SPIN" backgroundImage="spinningWhelAxel">
-                                    <color key="titleColor" red="0.98823529409999999" green="0.59999999999999998" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.43463325500488281" green="0.0" blue="0.7132803201675415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="rotateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fiX-hU-lDd"/>
@@ -57,6 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="spinningWhelAxel" width="109" height="128"/>
+        <image name="spinningWhelAxel" width="109" height="120"/>
     </resources>
 </document>
