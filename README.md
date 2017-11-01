@@ -19,7 +19,7 @@ This project is maintained by Tapptitude, a Product-Focused Mobile Development A
 - Drawn and animated using CoreGraphics
 - Customize(Font, Slice Color, Stroke, Frame color, width and shadow) 
 - Predictible rotation to any slice 
-- Exposes methods for custom Core Grapgics drawings for each slice 
+- Exposes methods for custom Core Graphics drawings for each slice 
 - Dynamic size
 
 ## Requirements
