@@ -20,7 +20,6 @@
 		D74F36C21FA86AD7003D0416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74F36C11FA86AD7003D0416 /* Assets.xcassets */; };
 		D74F36C51FA86AD7003D0416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74F36C31FA86AD7003D0416 /* LaunchScreen.storyboard */; };
 		D7A9DFE51FA8830100C3DF98 /* TTFortuneWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74F36A91FA86966003D0416 /* TTFortuneWheel.framework */; };
-		D7D7F0411FA884AE0042B5C6 /* TTFortuneWheelResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D798CC8C1FA8760100FE2880 /* TTFortuneWheelResources.bundle */; };
 		D7D7F0471FA88B610042B5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		D74F36C11FA86AD7003D0416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74F36C41FA86AD7003D0416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74F36C61FA86AD7003D0416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D798CC8C1FA8760100FE2880 /* TTFortuneWheelResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTFortuneWheelResources.bundle; sourceTree = "<group>"; };
 		D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 				D70B495C1FA86B9100231E07 /* Utils.swift */,
 				D74F36AD1FA86966003D0416 /* Info.plist */,
 				D7D7F0461FA88B420042B5C6 /* Resources */,
-				D798CC8C1FA8760100FE2880 /* TTFortuneWheelResources.bundle */,
 			);
 			path = TTFortuneWheel;
 			sourceTree = "<group>";
@@ -222,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D7F0411FA884AE0042B5C6 /* TTFortuneWheelResources.bundle in Resources */,
 				D7D7F0471FA88B610042B5C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
