@@ -77,4 +77,4 @@ Feel free to Fork, submit Pull Requests or send us your feedback and suggestions
 
 ## License
 
-TTSegmentedControl is available under the MIT license. See the LICENSE file for more info.
+TTFortuneWheel is available under the MIT license. See the LICENSE file for more info.
