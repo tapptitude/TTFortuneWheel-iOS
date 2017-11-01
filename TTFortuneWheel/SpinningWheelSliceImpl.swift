@@ -33,7 +33,7 @@ public class FortuneWheelSlice: FortuneWheelSliceProtocol {
         case .light: return TTUtils.uiColor(from: 0x320A51)
         }
     }
-    
+        
     public var font: UIFont {
         return UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }

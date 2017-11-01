@@ -14,20 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var spinningWheel: TTFortuneWheel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let slices = [ FortuneWheelSlice.init(title: "Win and lose!"),
-                       FortuneWheelSlice.init(title: "Horray"),
-                       FortuneWheelSlice.init(title: "Super Premiu"),
-                       FortuneWheelSlice.init(title: "Bam bam"),
-                       FortuneWheelSlice.init(title: "Cool!"),
-                       FortuneWheelSlice.init(title: "Bam bam bam bam"),
-                       FortuneWheelSlice.init(title: "Try again tomorrow!"),
-                       FortuneWheelSlice.init(title: "This is your lucky day!")]
+        let slices = [ CarnivalWheelSlice.init(title: "Roller Coaster"),
+                       CarnivalWheelSlice.init(title: "Try again"),
+                       CarnivalWheelSlice.init(title: "Free\nticket"),
+                       CarnivalWheelSlice.init(title: "Teddy\nbear"),
+                       CarnivalWheelSlice.init(title: "Large popcorn"),
+                       CarnivalWheelSlice.init(title: "Balloon figures"),
+                       CarnivalWheelSlice.init(title: "Ferris Wheel"),
+                       CarnivalWheelSlice.init(title: "Pony\nRide")]
         spinningWheel.slices = slices
         spinningWheel.equalSlices = true
+        spinningWheel.frameStroke.width = 0
         spinningWheel.slices.enumerated().forEach { (pair) in
-            let slice = pair.element as! FortuneWheelSlice
+            let slice = pair.element as! CarnivalWheelSlice
             let offset = pair.offset
-            slice.style = offset % 2 == 1 ? .dark : .light
+            switch offset % 4 {
+            case 0: slice.style = .brickRed
+            case 1: slice.style = .sandYellow
+            case 2: slice.style = .babyBlue
+            case 3: slice.style = .deepBlue
+            default: slice.style = .brickRed
+            }
         }
     }
     

@@ -20,20 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2k-m8-tps" customClass="TTFortuneWheel" customModule="TTFortuneWheel">
-                                <rect key="frame" x="37" y="183" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="19" y="154" width="337" height="337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="c2k-m8-tps" secondAttribute="height" multiplier="1:1" id="fL4-Ot-yUP"/>
+                                    <constraint firstAttribute="width" secondItem="c2k-m8-tps" secondAttribute="height" multiplier="1:1" id="rt5-XG-ZhZ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-LZ-YE8">
-                                <rect key="frame" x="133" y="264" width="109" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheelFrame" translatesAutoresizingMaskIntoConstraints="NO" id="YfA-K8-wNE">
+                                <rect key="frame" x="3" y="140.5" width="369" height="386"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YfA-K8-wNE" secondAttribute="height" multiplier="369:386" id="ynI-af-LcD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-LZ-YE8">
+                                <rect key="frame" x="99.5" y="241.5" width="176" height="178"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="SPIN" backgroundImage="spinningWhelAxel">
-                                    <color key="titleColor" red="0.43463325500488281" green="0.0" blue="0.7132803201675415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-29" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="SPIN" backgroundImage="spin">
+                                    <color key="titleColor" red="0.90196078431372551" green="0.90588235294117647" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="rotateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fiX-hU-lDd"/>
@@ -42,9 +47,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c2k-m8-tps" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="VlO-uF-BZB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c2k-m8-tps" secondAttribute="trailing" constant="38" id="sSh-kb-x7S"/>
-                            <constraint firstItem="c2k-m8-tps" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x55-Dm-adp"/>
+                            <constraint firstItem="YfA-K8-wNE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dfu-qR-32M"/>
+                            <constraint firstItem="c2k-m8-tps" firstAttribute="centerY" secondItem="YfA-K8-wNE" secondAttribute="centerY" constant="-11" id="Eql-30-prR"/>
+                            <constraint firstItem="c2k-m8-tps" firstAttribute="leading" secondItem="YfA-K8-wNE" secondAttribute="leading" constant="16" id="Rms-bu-Po3"/>
+                            <constraint firstItem="8Zd-LZ-YE8" firstAttribute="centerY" secondItem="YfA-K8-wNE" secondAttribute="centerY" constant="-3" id="U9W-hx-6wj"/>
+                            <constraint firstItem="8Zd-LZ-YE8" firstAttribute="centerX" secondItem="YfA-K8-wNE" secondAttribute="centerX" id="gVN-Zw-t8W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YfA-K8-wNE" secondAttribute="trailing" constant="3" id="iBC-v9-f4n"/>
+                            <constraint firstItem="c2k-m8-tps" firstAttribute="centerX" secondItem="YfA-K8-wNE" secondAttribute="centerX" id="iGq-BZ-NRD"/>
+                            <constraint firstItem="YfA-K8-wNE" firstAttribute="trailing" secondItem="c2k-m8-tps" secondAttribute="trailing" constant="16" id="ib5-Et-uGr"/>
+                            <constraint firstItem="YfA-K8-wNE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="lfo-tP-rQp"/>
+                            <constraint firstItem="YfA-K8-wNE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uam-Su-zEz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -58,6 +70,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="spinningWhelAxel" width="109" height="120"/>
+        <image name="spin" width="176" height="178"/>
+        <image name="wheelFrame" width="369" height="386"/>
     </resources>
 </document>

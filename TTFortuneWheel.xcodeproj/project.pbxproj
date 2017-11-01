@@ -21,6 +21,11 @@
 		D74F36C51FA86AD7003D0416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74F36C31FA86AD7003D0416 /* LaunchScreen.storyboard */; };
 		D7A9DFE51FA8830100C3DF98 /* TTFortuneWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74F36A91FA86966003D0416 /* TTFortuneWheel.framework */; };
 		D7D7F0471FA88B610042B5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */; };
+		D7E515CE1FA9C3C900218F8A /* CarnivalWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E515CD1FA9C3C900218F8A /* CarnivalWheelSlice.swift */; };
+		D7E515D81FA9C63C00218F8A /* BEBAS___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D31FA9C61600218F8A /* BEBAS___.ttf */; };
+		D7E515D91FA9C63C00218F8A /* Phosphate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D21FA9C60900218F8A /* Phosphate.ttc */; };
+		D7E515DA1FA9C63C00218F8A /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D11FA9C5E800218F8A /* Lobster_1.3.otf */; };
+		D7E515DB1FA9C63C00218F8A /* Chunkfive.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D01FA9C5D800218F8A /* Chunkfive.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		D74F36C41FA86AD7003D0416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74F36C61FA86AD7003D0416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7E515CD1FA9C3C900218F8A /* CarnivalWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarnivalWheelSlice.swift; sourceTree = "<group>"; };
+		D7E515D01FA9C5D800218F8A /* Chunkfive.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chunkfive.otf; sourceTree = "<group>"; };
+		D7E515D11FA9C5E800218F8A /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
+		D7E515D21FA9C60900218F8A /* Phosphate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttc; sourceTree = "<group>"; };
+		D7E515D31FA9C61600218F8A /* BEBAS___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BEBAS___.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,8 @@
 				D74F36C11FA86AD7003D0416 /* Assets.xcassets */,
 				D74F36C31FA86AD7003D0416 /* LaunchScreen.storyboard */,
 				D74F36C61FA86AD7003D0416 /* Info.plist */,
+				D7E515CD1FA9C3C900218F8A /* CarnivalWheelSlice.swift */,
+				D7E515CF1FA9C5CE00218F8A /* Resources */,
 			);
 			path = TTFortuneWheelSample;
 			sourceTree = "<group>";
@@ -121,6 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7E515CF1FA9C5CE00218F8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7E515D31FA9C61600218F8A /* BEBAS___.ttf */,
+				D7E515D21FA9C60900218F8A /* Phosphate.ttc */,
+				D7E515D11FA9C5E800218F8A /* Lobster_1.3.otf */,
+				D7E515D01FA9C5D800218F8A /* Chunkfive.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -227,6 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E515D81FA9C63C00218F8A /* BEBAS___.ttf in Resources */,
+				D7E515D91FA9C63C00218F8A /* Phosphate.ttc in Resources */,
+				D7E515DA1FA9C63C00218F8A /* Lobster_1.3.otf in Resources */,
+				D7E515DB1FA9C63C00218F8A /* Chunkfive.otf in Resources */,
 				D74F36C51FA86AD7003D0416 /* LaunchScreen.storyboard in Resources */,
 				D74F36C21FA86AD7003D0416 /* Assets.xcassets in Resources */,
 				D74F36C01FA86AD7003D0416 /* Main.storyboard in Resources */,
@@ -255,6 +282,7 @@
 			files = (
 				D74F36BD1FA86AD7003D0416 /* ViewController.swift in Sources */,
 				D74F36BB1FA86AD7003D0416 /* AppDelegate.swift in Sources */,
+				D7E515CE1FA9C3C900218F8A /* CarnivalWheelSlice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

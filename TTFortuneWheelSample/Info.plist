@@ -41,5 +41,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BEBAS___.ttf</string>
+		<string>Phosphate.ttc</string>
+		<string>Lobster_1.3.otf</string>
+		<string>Chunkfive.otf</string>
+	</array>
 </dict>
 </plist>

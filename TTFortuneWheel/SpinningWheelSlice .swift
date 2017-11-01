@@ -11,10 +11,10 @@ import UIKit
 
 
 public struct StrokeInfo {
-    var color:UIColor
-    var width:CGFloat
+    public var color:UIColor
+    public var width:CGFloat
     
-    init(color:UIColor, width:CGFloat) {
+    public init(color:UIColor, width:CGFloat) {
         self.color = color
         self.width = width
     }
@@ -27,6 +27,7 @@ public protocol FortuneWheelSliceProtocol {
     var backgroundColor:UIColor? { get }
     var degree:CGFloat { get }
     var stroke:StrokeInfo? { get }
+    var offsetFromExterior:CGFloat { get }
     
     //// Can provide any text attributes except NSMutableParagraphStyle which will allways be centered
     var textAttributes: [NSAttributedStringKey:Any] { get }
@@ -59,6 +60,8 @@ extension FortuneWheelSliceProtocol {
                  .paragraphStyle: textStyle ]
         return deafultAttributes
     }
+    
+    public var offsetFromExterior:CGFloat { return 10.0 }
     
     public var stroke:StrokeInfo? { return nil }
     

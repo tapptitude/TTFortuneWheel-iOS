@@ -13,9 +13,9 @@ import Foundation
     import Cocoa
 #endif
 
-class TTUtils {
+public class TTUtils {
     
-    class func uiColor(from rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
+    public class func uiColor(from rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
@@ -145,7 +145,7 @@ extension Collection where Indices.Iterator.Element == Index {
 }
 
 extension Bundle {
-    static func sw_frameworkBundle() -> Bundle {
+    public static func sw_frameworkBundle() -> Bundle {
         let bundle = Bundle(for: TTUtils.self)
         if let path = bundle.path(forResource: "TTFortuneWheel", ofType: "bundle") {
             return Bundle(path: path)!

@@ -98,8 +98,8 @@ open class FortuneWheelLayer: CALayer  {
         
         ///// Constats declarations
         let sectionWidthDegrees = degree(of: slice)
-        let kTitleOffset: CGFloat = 0.05
-        let titleXValue: CGFloat = mainFrame.minX + kTitleOffset * radius
+        let kTitleOffset: CGFloat = slice.offsetFromExterior
+        let titleXValue: CGFloat = mainFrame.minX + kTitleOffset
         let kTitleWidth: CGFloat = 0.6
         let titleWidthCoeficient: CGFloat = sin(sectionWidthDegrees / 2.0 * CGFloat.pi/180)
         let titleWidthValue: CGFloat = (kTitleWidth + titleWidthCoeficient * 0.2) * radius
