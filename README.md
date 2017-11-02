@@ -7,10 +7,11 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@Tapptitude-blue.svg?style=flat)](http://twitter.com/Tapptitude)
 
 ## About
-Fortune spinning wheel that supports custom drawing. 
+Fortune spinning wheel that supports custom drawing and dynamic content.
 
 This project is maintained by Tapptitude, a Product-Focused Mobile Development Agency based in Cluj-Napoca, Romania, and London, the UK, specialised in building high-quality Native Mobile Apps on iOS & Android. 
 
+![](Resources/example1.gif)
 
 ## Features:
 - Dynamic content 
@@ -18,7 +19,7 @@ This project is maintained by Tapptitude, a Product-Focused Mobile Development A
 - Drawn and animated using CoreGraphics
 - Customize(Font, Slice Color, Stroke, Frame color, width and shadow) 
 - Predictible rotation to any slice 
-- Exposes methods for custom Core Grapgics drawings for each slice 
+- Exposes methods for custom Core Graphics drawings for each slice 
 - Dynamic size
 
 ## Requirements
@@ -76,4 +77,4 @@ Feel free to Fork, submit Pull Requests or send us your feedback and suggestions
 
 ## License
 
-TTSegmentedControl is available under the MIT license. See the LICENSE file for more info.
+TTFortuneWheel is available under the MIT license. See the LICENSE file for more info.
