@@ -37,9 +37,9 @@ public protocol FortuneWheelSliceProtocol {
     var fontColor:UIColor { get }
     var font:UIFont { get }
     
-    //Implement if you want to add additional graphic to a slice
-    //Note the origin of coordinate system is at the center of the main circle
-    //You will have to dinamically compute the positon of your elements using the circularSegmentHeight and the radius
+    /// Implement if you want to add additional graphic to a slice.
+    /// Note the origin of coordinate system is at the center of the main circle.
+    /// You will have to dinamically compute the positon of your elements using the circularSegmentHeight and the radius
     func drawAdditionalGraphics(in context:CGContext, circularSegmentHeight:CGFloat,radius:CGFloat,sliceDegree:CGFloat)
 }
 

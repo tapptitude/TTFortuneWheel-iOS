@@ -13,18 +13,20 @@ import CoreGraphics
 
 open class FortuneWheelLayer: CALayer  {
     
-    // Used to center the drawing such that offseted graphics(e.g Shadows, Outer Glows) are not clipped.
-    // Can be increased to any size if needed.
+    /// Used to center the drawing such that offseted graphics(e.g Shadows, Outer Glows) are not clipped.
+    /// Can be increased to any size if needed.
     open var layerInsets:UIEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50)
     
     var mainFrame:CGRect!
     weak var parent:TTFortuneWheel!
+    private var initialOffset:CGFloat!
 
-    public init(frame:CGRect, parent:TTFortuneWheel) {
+    public init(frame:CGRect, parent:TTFortuneWheel,initialOffset:CGFloat = 0.0) {
         super.init()
         mainFrame = CGRect(origin: CGPoint(x: abs(layerInsets.left), y: abs(layerInsets.top)), size: frame.size)
         self.frame = UIEdgeInsetsInsetRect(frame, layerInsets)
         self.parent = parent
+        self.initialOffset = initialOffset
         self.backgroundColor = UIColor.clear.cgColor
         self.contentsScale = UIScreen.main.scale
     }
@@ -57,7 +59,7 @@ open class FortuneWheelLayer: CALayer  {
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
         //// Slice drawings
-        var rotation:CGFloat = 0.0
+        var rotation:CGFloat = initialOffset
         parent.slices.enumerated().forEach { (index,element) in
             if let previousSlice = parent.slices[safe:(index - 1)] {
                 rotation += (degree(of:previousSlice) + degree(of:element)) / 2

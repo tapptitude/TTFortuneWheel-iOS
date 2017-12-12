@@ -10,14 +10,19 @@ import UIKit
 
 public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorProtocol {
     
-    //Set to true if you want all slices to be disributed evenly
+    /// Set to true if you want all slices to be disributed evenly
     open var equalSlices:Bool = false
     
     open var slices:[FortuneWheelSliceProtocol]!
     
-    //UIConfiguration of the main frame
+    /// UIConfiguration of the main frame
     open var frameStroke:StrokeInfo = StrokeInfo(color: TTUtils.uiColor(from: 0x6E17B3), width: 8)
     open var shadow:NSShadow?
+    
+    
+    /// Set this to start drawing from that offset
+    /// The sliced centerd to this offset will be 0 indexed one
+    open var initialDrawingOffset:CGFloat = 0.0
     
     lazy private var animator:SpinningWheelAnimator = SpinningWheelAnimator(withObjectToAnimate: self)
     private(set) var sliceDegree:CGFloat?
@@ -56,7 +61,7 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     }
     
     private func addWheelLayer() {
-        wheelLayer = FortuneWheelLayer(frame:self.bounds,parent:self)
+        wheelLayer = FortuneWheelLayer(frame:self.bounds,parent:self,initialOffset:initialDrawingOffset)
         self.layer.addSublayer(wheelLayer)
         wheelLayer.setNeedsDisplay()
     }

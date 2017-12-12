@@ -23,6 +23,7 @@ class ViewController: UIViewController {
                        CarnivalWheelSlice.init(title: "Ferris Wheel"),
                        CarnivalWheelSlice.init(title: "Pony\nRide")]
         spinningWheel.slices = slices
+        spinningWheel.in
         spinningWheel.equalSlices = true
         spinningWheel.frameStroke.width = 0
         spinningWheel.slices.enumerated().forEach { (pair) in
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rotateButton(_ sender: Any) {
-        spinningWheel.startAnimating(fininshIndex: 6, offset: 20) { (finished) in
+        spinningWheel.startAnimating(fininshIndex: 1) { (finished) in
             print(finished)
         }
     }
