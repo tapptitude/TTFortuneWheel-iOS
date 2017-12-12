@@ -45,9 +45,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rotateButton(_ sender: Any) {
-        spinningWheel.startAnimating(rotationCompletionOffset: 45.0, { (finished) in
+        spinningWheel.startAnimating(fininshIndex: 6, offset: 20) { (finished) in
             print(finished)
-        })
+        }
     }
 }
 

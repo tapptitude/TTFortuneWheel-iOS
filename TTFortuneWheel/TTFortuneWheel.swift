@@ -79,12 +79,17 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     }
     
     open func startAnimating(fininshIndex:Int = 0, _ completion:((Bool) -> Void)?) {
-        let rotation = computeRadian(from: fininshIndex)
+        let rotation = 360.0 - computeRadian(from: fininshIndex)
+        self.startAnimating(rotationCompletionOffset: rotation, completion)
+    }
+    
+    open func startAnimating(fininshIndex:Int = 0, offset:CGFloat, _ completion:((Bool) -> Void)?) {
+        let rotation = 360.0 - computeRadian(from: fininshIndex) + offset 
         self.startAnimating(rotationCompletionOffset: rotation, completion)
     }
     
     private func computeRadian(from finishIndex:Int) -> CGFloat {
-        guard !equalSlices else {
+        if equalSlices {
             return CGFloat(finishIndex) * sliceDegree!
         }
         return slices.enumerated().filter({ $0.offset < finishIndex}).reduce(0.0, { $0 + $1.element.degree })
