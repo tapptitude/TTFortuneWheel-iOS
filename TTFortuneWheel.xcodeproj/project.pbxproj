@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7043A2D1FE29CBB0064F43D /* TTFortuneWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74F36A91FA86966003D0416 /* TTFortuneWheel.framework */; };
+		D7043A2E1FE29D310064F43D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */; };
+		D7043A301FE29DAD0064F43D /* TTFortuneWheel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D74F36A91FA86966003D0416 /* TTFortuneWheel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D70B495D1FA86B9100231E07 /* SpinningWheelAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B49571FA86B9100231E07 /* SpinningWheelAnimator.swift */; };
 		D70B495F1FA86B9100231E07 /* FortuneWheelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B49581FA86B9100231E07 /* FortuneWheelLayer.swift */; };
 		D70B49611FA86B9100231E07 /* SpinningWheelSlice .swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B49591FA86B9100231E07 /* SpinningWheelSlice .swift */; };
@@ -19,14 +22,36 @@
 		D74F36C01FA86AD7003D0416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74F36BE1FA86AD7003D0416 /* Main.storyboard */; };
 		D74F36C21FA86AD7003D0416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74F36C11FA86AD7003D0416 /* Assets.xcassets */; };
 		D74F36C51FA86AD7003D0416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74F36C31FA86AD7003D0416 /* LaunchScreen.storyboard */; };
-		D7A9DFE51FA8830100C3DF98 /* TTFortuneWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74F36A91FA86966003D0416 /* TTFortuneWheel.framework */; };
-		D7D7F0471FA88B610042B5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D7F0451FA88B3B0042B5C6 /* Assets.xcassets */; };
 		D7E515CE1FA9C3C900218F8A /* CarnivalWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E515CD1FA9C3C900218F8A /* CarnivalWheelSlice.swift */; };
 		D7E515D81FA9C63C00218F8A /* BEBAS___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D31FA9C61600218F8A /* BEBAS___.ttf */; };
 		D7E515D91FA9C63C00218F8A /* Phosphate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D21FA9C60900218F8A /* Phosphate.ttc */; };
 		D7E515DA1FA9C63C00218F8A /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D11FA9C5E800218F8A /* Lobster_1.3.otf */; };
 		D7E515DB1FA9C63C00218F8A /* Chunkfive.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E515D01FA9C5D800218F8A /* Chunkfive.otf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7043A311FE29DAD0064F43D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D74F36A01FA86966003D0416 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D74F36A81FA86966003D0416;
+			remoteInfo = TTFortuneWheel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7043A331FE29DAD0064F43D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7043A301FE29DAD0064F43D /* TTFortuneWheel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D70B49571FA86B9100231E07 /* SpinningWheelAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningWheelAnimator.swift; sourceTree = "<group>"; };
@@ -65,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A9DFE51FA8830100C3DF98 /* TTFortuneWheel.framework in Frameworks */,
+				D7043A2D1FE29CBB0064F43D /* TTFortuneWheel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +212,12 @@
 				D74F36B41FA86AD7003D0416 /* Sources */,
 				D74F36B51FA86AD7003D0416 /* Frameworks */,
 				D74F36B61FA86AD7003D0416 /* Resources */,
+				D7043A331FE29DAD0064F43D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D7043A321FE29DAD0064F43D /* PBXTargetDependency */,
 			);
 			name = TTFortuneWheelSample;
 			productName = TTFortuneWheelSample;
@@ -242,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D7F0471FA88B610042B5C6 /* Assets.xcassets in Resources */,
+				D7043A2E1FE29D310064F43D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +314,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7043A321FE29DAD0064F43D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D74F36A81FA86966003D0416 /* TTFortuneWheel */;
+			targetProxy = D7043A311FE29DAD0064F43D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D74F36BE1FA86AD7003D0416 /* Main.storyboard */ = {
@@ -473,6 +508,7 @@
 		D74F36C81FA86AD7003D0416 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7T599BH7B;
@@ -489,6 +525,7 @@
 		D74F36C91FA86AD7003D0416 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7T599BH7B;

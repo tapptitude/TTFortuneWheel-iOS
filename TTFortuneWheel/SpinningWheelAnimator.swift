@@ -31,6 +31,21 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
         self.animationObject = animationObject
     }
     
+    
+    func addIndefiniteRotationAnimation() {
+        
+        let fillMode : String = kCAFillModeForwards
+        let starTransformAnim      = CAKeyframeAnimation(keyPath:"transform.rotation.z")
+        starTransformAnim.values   = [0, 7000 * CGFloat.pi/180]
+        starTransformAnim.keyTimes = [0, 1]
+        starTransformAnim.duration = rotationTime
+        
+        let starRotationAnim : CAAnimationGroup = TTUtils.group(animations: [starTransformAnim], fillMode:fillMode)
+        starRotationAnim.repeatCount = Float.infinity
+        animationObject.layerToAnimate.add(starRotationAnim, forKey:"starRotationIndefiniteAnim")
+        
+    }
+    
     func addRotationAnimation(completionBlock: ((_ finished: Bool) -> Void)? = nil, rotationOffset:CGFloat = 0.0){
         if completionBlock != nil{
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")
@@ -83,6 +98,10 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
         if identifier == "rotation"{
             animationObject.layerToAnimate.removeAnimation(forKey: "starRotationAnim")
         }
+    }
+    
+    func removeIndefiniteAnimation() {
+        animationObject.layerToAnimate.removeAnimation(forKey: "starRotationIndefiniteAnim")
     }
     
     func removeAllAnimations(){

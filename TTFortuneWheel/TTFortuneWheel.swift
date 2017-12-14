@@ -80,12 +80,21 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     }
     
     open func startAnimating(rotationCompletionOffset:CGFloat = 0.0, _ completion:((Bool) -> Void)?) {
+        self.stopAnimating()
         self.animator.addRotationAnimation(completionBlock: completion,rotationOffset:rotationCompletionOffset)
     }
     
     open func startAnimating(fininshIndex:Int = 0, _ completion:((Bool) -> Void)?) {
         let rotation = 360.0 - computeRadian(from: fininshIndex)
         self.startAnimating(rotationCompletionOffset: rotation, completion)
+    }
+    
+    open func startAnimating() {
+        self.animator.addIndefiniteRotationAnimation()
+    }
+    
+    open func stopAnimating() {
+        self.animator.removeAllAnimations()
     }
     
     open func startAnimating(fininshIndex:Int = 0, offset:CGFloat, _ completion:((Bool) -> Void)?) {
