@@ -31,10 +31,16 @@ This project is maintained by Tapptitude, a mobile app development agency specia
 
 _CocoaPods_
 
-_Swift 4.0_
+_Swift 4.2_
 
 ```ruby
 pod 'TTFortuneWheel'
+```
+
+_Swift 4.0_
+
+```ruby
+pod 'TTFortuneWheel', '~>0.1.5'
 ```
 
 _Carthage_
