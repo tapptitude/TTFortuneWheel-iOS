@@ -30,7 +30,7 @@ public protocol FortuneWheelSliceProtocol {
     var offsetFromExterior:CGFloat { get }
     
     //// Can provide any text attributes except NSMutableParagraphStyle which will allways be centered
-    var textAttributes: [NSAttributedStringKey:Any] { get }
+    var textAttributes: [NSAttributedString.Key:Any] { get }
     
     //// Can be overriten individualy. textAttributes is used if set.
     var fontSize:CGFloat { get }
@@ -51,10 +51,10 @@ extension FortuneWheelSliceProtocol {
     public var fontColor:UIColor { return UIColor.black }
     public var font:UIFont { return UIFont.systemFont(ofSize: fontSize, weight: .regular) }
     
-    public var textAttributes:[NSAttributedStringKey:Any] {
+    public var textAttributes:[NSAttributedString.Key:Any] {
         let textStyle = NSMutableParagraphStyle()
         textStyle.alignment = .left
-        let deafultAttributes:[NSAttributedStringKey: Any] =
+        let deafultAttributes:[NSAttributedString.Key: Any] =
                 [.font: self.font,
                  .foregroundColor: self.fontColor,
                  .paragraphStyle: textStyle ]

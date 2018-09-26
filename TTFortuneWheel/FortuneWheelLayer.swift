@@ -15,7 +15,7 @@ open class FortuneWheelLayer: CALayer  {
     
     /// Used to center the drawing such that offseted graphics(e.g Shadows, Outer Glows) are not clipped.
     /// Can be increased to any size if needed.
-    open var layerInsets:UIEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50)
+    open var layerInsets:UIEdgeInsets = UIEdgeInsets(top: -50, left: -50, bottom: -50, right: -50)
     
     var mainFrame:CGRect!
     weak var parent:TTFortuneWheel!
@@ -24,7 +24,7 @@ open class FortuneWheelLayer: CALayer  {
     public init(frame:CGRect, parent:TTFortuneWheel,initialOffset:CGFloat = 0.0) {
         super.init()
         mainFrame = CGRect(origin: CGPoint(x: abs(layerInsets.left), y: abs(layerInsets.top)), size: frame.size)
-        self.frame = UIEdgeInsetsInsetRect(frame, layerInsets)
+        self.frame = frame.inset(by: layerInsets)
         self.parent = parent
         self.initialOffset = initialOffset
         self.backgroundColor = UIColor.clear.cgColor

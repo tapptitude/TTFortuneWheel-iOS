@@ -33,10 +33,10 @@ public class TTUtils {
         if (fillMode != nil){
             if let animations = groupAnimation.animations {
                 for anim in animations {
-                    anim.fillMode = fillMode
+                    anim.fillMode = CAMediaTimingFillMode(rawValue: fillMode!)
                 }
             }
-            groupAnimation.fillMode = fillMode
+            groupAnimation.fillMode = CAMediaTimingFillMode(rawValue: fillMode!)
             groupAnimation.isRemovedOnCompletion = false
         }
         

@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TTFortuneWheel'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Fortune spinning wheel that supports custom drawing.'
   s.description      = <<-DESC
   Fortune spinning wheel that supports custom drawing.
