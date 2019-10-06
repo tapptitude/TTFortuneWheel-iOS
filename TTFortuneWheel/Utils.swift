@@ -26,7 +26,10 @@ public class TTUtils {
     
     //QuartzCode methods utils 
     
-    class func group(animations : [CAAnimation], fillMode : String!, forEffectLayer : Bool = false, sublayersCount : NSInteger = 0) -> CAAnimationGroup!{
+    class func group(animations : [CAAnimation],
+                     fillMode : String!,
+                     forEffectLayer : Bool = false,
+                     sublayersCount : NSInteger = 0) -> CAAnimationGroup!{
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = animations
         
@@ -41,7 +44,8 @@ public class TTUtils {
         }
         
         if forEffectLayer{
-            groupAnimation.duration = TTUtils.maxDuration(ofEffectAnimation: groupAnimation, sublayersCount: sublayersCount)
+            groupAnimation.duration = TTUtils.maxDuration(ofEffectAnimation: groupAnimation,
+                                                          sublayersCount: sublayersCount)
         }else{
             groupAnimation.duration = TTUtils.maxDuration(ofAnimations: animations)
         }
@@ -62,7 +66,8 @@ public class TTUtils {
         return CFTimeInterval(maxDuration);
     }
     
-    class func maxDuration(ofEffectAnimation anim: CAAnimation, sublayersCount : NSInteger) -> CFTimeInterval{
+    class func maxDuration(ofEffectAnimation anim: CAAnimation,
+                           sublayersCount : NSInteger) -> CFTimeInterval{
         var maxDuration : CGFloat = 0
         if let groupAnim = anim as? CAAnimationGroup{
             for subAnim in groupAnim.animations! as [CAAnimation]{
@@ -106,14 +111,17 @@ public class TTUtils {
         CATransaction.commit()
     }
     
-    class func updateValue(forAnimation anim: CAAnimation, theLayer : CALayer){
+    class func updateValue(forAnimation anim: CAAnimation,
+                           theLayer : CALayer){
         if let basicAnim = anim as? CABasicAnimation{
             if (!basicAnim.autoreverses) {
-                theLayer.setValue(basicAnim.toValue, forKeyPath: basicAnim.keyPath!)
+                theLayer.setValue(basicAnim.toValue,
+                                  forKeyPath: basicAnim.keyPath!)
             }
         }else if let keyAnim = anim as? CAKeyframeAnimation{
             if (!keyAnim.autoreverses) {
-                theLayer.setValue(keyAnim.values?.last, forKeyPath: keyAnim.keyPath!)
+                theLayer.setValue(keyAnim.values?.last,
+                                  forKeyPath: keyAnim.keyPath!)
             }
         }else if let groupAnim = anim as? CAAnimationGroup{
             for subAnim in groupAnim.animations! as [CAAnimation]{
@@ -123,14 +131,18 @@ public class TTUtils {
         }
     }
     
-    class func updateValueFromPresentationLayer(forAnimation anim: CAAnimation!, theLayer : CALayer){
+    class func updateValueFromPresentationLayer(forAnimation anim: CAAnimation!,
+                                                theLayer : CALayer){
         if let basicAnim = anim as? CABasicAnimation{
-            theLayer.setValue(theLayer.presentation()?.value(forKeyPath: basicAnim.keyPath!), forKeyPath: basicAnim.keyPath!)
+            theLayer.setValue(theLayer.presentation()?.value(forKeyPath: basicAnim.keyPath!),
+                              forKeyPath: basicAnim.keyPath!)
         }else if let keyAnim = anim as? CAKeyframeAnimation{
-            theLayer.setValue(theLayer.presentation()?.value(forKeyPath: keyAnim.keyPath!), forKeyPath: keyAnim.keyPath!)
+            theLayer.setValue(theLayer.presentation()?.value(forKeyPath: keyAnim.keyPath!),
+                              forKeyPath: keyAnim.keyPath!)
         }else if let groupAnim = anim as? CAAnimationGroup{
             for subAnim in groupAnim.animations! as [CAAnimation]{
-                updateValueFromPresentationLayer(forAnimation: subAnim, theLayer: theLayer)
+                updateValueFromPresentationLayer(forAnimation: subAnim,
+                                                 theLayer: theLayer)
             }
         }
     }
@@ -155,13 +167,3 @@ extension Bundle {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

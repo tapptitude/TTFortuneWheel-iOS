@@ -61,7 +61,9 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     }
     
     private func addWheelLayer() {
-        wheelLayer = FortuneWheelLayer(frame:self.bounds,parent:self,initialOffset:initialDrawingOffset)
+        wheelLayer = FortuneWheelLayer(frame:self.bounds,
+                                       parent:self,
+                                       initialOffset:initialDrawingOffset)
         self.layer.addSublayer(wheelLayer)
         wheelLayer.setNeedsDisplay()
     }

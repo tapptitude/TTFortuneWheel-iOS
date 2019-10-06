@@ -46,7 +46,8 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
         
     }
     
-    func addRotationAnimation(completionBlock: ((_ finished: Bool) -> Void)? = nil, rotationOffset:CGFloat = 0.0){
+    func addRotationAnimation(completionBlock: ((_ finished: Bool) -> Void)? = nil,
+                              rotationOffset:CGFloat = 0.0){
         if completionBlock != nil{
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")
             completionAnim.duration = rotationTime
@@ -69,10 +70,16 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
         starTransformAnim.values         = [0, rotation * CGFloat.pi/180]
         starTransformAnim.keyTimes       = [0, 1]
         starTransformAnim.duration       = 5
-        starTransformAnim.timingFunction = CAMediaTimingFunction(controlPoints: 0.0256, 0.874, 0.675, 1)
+        starTransformAnim.timingFunction = CAMediaTimingFunction(controlPoints: 0.0256,
+                                                                 0.874,
+                                                                 0.675,
+                                                                 1)
         
-        let starRotationAnim : CAAnimationGroup = TTUtils.group(animations: [starTransformAnim], fillMode:fillMode)
-        animationObject.layerToAnimate.add(starRotationAnim, forKey:"starRotationAnim")
+        let starRotationAnim: CAAnimationGroup = TTUtils.group(animations: [starTransformAnim],
+                                                                fillMode:fillMode)
+        animationObject
+            .layerToAnimate
+            .add(starRotationAnim, forKey:"starRotationAnim")
     }
     
     //MARK: - Animation Cleanup
@@ -80,7 +87,8 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool){
         if let completionBlock = completionBlocks[anim]{
             completionBlocks.removeValue(forKey: anim)
-            if (flag && updateLayerValueForCompletedAnimation) || anim.value(forKey: "needEndAnim") as! Bool{
+            if (flag && updateLayerValueForCompletedAnimation) ||
+                anim.value(forKey: "needEndAnim") as! Bool{
                 updateLayerValues(forAnimationId: anim.value(forKey: "animId") as! String)
                 removeAnimations(forAnimationId: anim.value(forKey: "animId") as! String)
             }
@@ -90,22 +98,33 @@ class SpinningWheelAnimator : NSObject, CAAnimationDelegate {
     
     func updateLayerValues(forAnimationId identifier: String){
         if identifier == "rotation"{
-            TTUtils.updateValueFromPresentationLayer(forAnimation: animationObject.layerToAnimate.animation(forKey: "starRotationAnim"), theLayer:animationObject.layerToAnimate)
+            TTUtils
+                .updateValueFromPresentationLayer(forAnimation:
+                    animationObject
+                        .layerToAnimate
+                        .animation(forKey: "starRotationAnim"),
+                                                  theLayer:animationObject.layerToAnimate)
         }
     }
     
     func removeAnimations(forAnimationId identifier: String){
         if identifier == "rotation"{
-            animationObject.layerToAnimate.removeAnimation(forKey: "starRotationAnim")
+            animationObject
+                .layerToAnimate
+                .removeAnimation(forKey: "starRotationAnim")
         }
     }
     
     func removeIndefiniteAnimation() {
-        animationObject.layerToAnimate.removeAnimation(forKey: "starRotationIndefiniteAnim")
+        animationObject
+            .layerToAnimate
+            .removeAnimation(forKey: "starRotationIndefiniteAnim")
     }
     
     func removeAllAnimations(){
-        animationObject.layerToAnimate.removeAllAnimations()
+        animationObject
+            .layerToAnimate
+            .removeAllAnimations()
     }
     
 }
