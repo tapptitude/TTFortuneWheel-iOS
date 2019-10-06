@@ -112,4 +112,9 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     }
 }
 
-
+extension TTFortuneWheel {
+    open func reload(slices: [FortuneWheelSliceProtocol]) {
+        self.slices = slices
+        draw(self.bounds)
+    }
+}
