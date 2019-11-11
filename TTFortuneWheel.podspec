@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TTFortuneWheel'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Fortune spinning wheel that supports custom drawing.'
   s.description      = <<-DESC
   Fortune spinning wheel that supports custom drawing.
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'TTFortuneWheel' => ['TTFortuneWheel/Resources/**/*']
   }
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
-
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+  s.SWIFT_VERSION = '5.0'
 end
