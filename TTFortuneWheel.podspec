@@ -19,6 +19,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'TTFortuneWheel' => ['TTFortuneWheel/Resources/**/*']
   }
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
-  s.SWIFT_VERSION = '5.0'
+  s.swift_version           = '5.0'
 end
