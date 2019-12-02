@@ -20,10 +20,15 @@ open class FortuneWheelLayer: CALayer  {
     var mainFrame:CGRect!
     weak var parent:TTFortuneWheel!
     private var initialOffset:CGFloat!
-
-    public init(frame:CGRect, parent:TTFortuneWheel,initialOffset:CGFloat = 0.0) {
+    
+    public init(frame:CGRect,
+                parent:TTFortuneWheel,
+                initialOffset:CGFloat = 0.0) {
+        
         super.init()
-        mainFrame = CGRect(origin: CGPoint(x: abs(layerInsets.left), y: abs(layerInsets.top)), size: frame.size)
+        mainFrame = CGRect(origin: CGPoint(x: abs(layerInsets.left),
+                                           y: abs(layerInsets.top)),
+                           size: frame.size)
         self.frame = frame.inset(by: layerInsets)
         self.parent = parent
         self.initialOffset = initialOffset
@@ -50,11 +55,13 @@ open class FortuneWheelLayer: CALayer  {
     open func drawCanvas(mainFrame: CGRect) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
-    
+        
         //// Main Group
         context.saveGState()
         if let shadow = parent.shadow {
-            context.setShadow(offset: shadow.shadowOffset, blur: shadow.shadowBlurRadius, color: (shadow.shadowColor as! UIColor).cgColor)
+            context.setShadow(offset: shadow.shadowOffset,
+                              blur: shadow.shadowBlurRadius,
+                              color: (shadow.shadowColor as! UIColor).cgColor)
         }
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -64,13 +71,17 @@ open class FortuneWheelLayer: CALayer  {
             if let previousSlice = parent.slices[safe:(index - 1)] {
                 rotation += (degree(of:previousSlice) + degree(of:element)) / 2
             }
-            self.drawSlice(withIndex: index, in: context, forSlice: element,rotation:rotation)
-            
+            self.drawSlice(withIndex: index,
+                           in: context,
+                           forSlice: element,
+                           rotation:rotation)
         }
         
         //// Aditional graphics drwings
         parent.slices.enumerated().forEach { (index,element) in
-            self.drawAdditionalGraphics(in: context, rotation: rotation, for: element)
+            self.drawAdditionalGraphics(in: context,
+                                        rotation: rotation,
+                                        for: element)
             let previousSlice:FortuneWheelSliceProtocol = parent.slices[safe:(index - 1)] ?? element
             rotation += degree(of:previousSlice)
         }
@@ -95,7 +106,7 @@ open class FortuneWheelLayer: CALayer  {
     }
     
     //MARK:- Graphics drawings
-
+    
     open func drawSlice(withIndex index:Int, in context:CGContext, forSlice slice:FortuneWheelSliceProtocol, rotation:CGFloat) {
         
         ///// Constats declarations
@@ -117,9 +128,17 @@ open class FortuneWheelLayer: CALayer  {
         context.rotate(by: rotation * CGFloat.pi/180)
         
         //// Slice drawing
-        let sliceRect = CGRect(x: (mainFrame.minX - rotationOffset), y: (mainFrame.minY - rotationOffset), width: mainFrame.width, height: mainFrame.height)
+        let sliceRect = CGRect(x: (mainFrame.minX - rotationOffset),
+                               y: (mainFrame.minY - rotationOffset),
+                               width: mainFrame.width,
+                               height: mainFrame.height)
         let slicePath = UIBezierPath()
-        slicePath.addArc(withCenter: CGPoint(x: sliceRect.midX, y: sliceRect.midY), radius: sliceRect.width / 2, startAngle: -startAngle * CGFloat.pi/180, endAngle: -endAngle * CGFloat.pi/180, clockwise: true)
+        slicePath.addArc(withCenter: CGPoint(x: sliceRect.midX, y: sliceRect.midY),
+                         radius: sliceRect.width / 2,
+                         startAngle: -startAngle * CGFloat.pi/180,
+                         endAngle: -endAngle * CGFloat.pi/180,
+                         clockwise: true)
+        
         slicePath.addLine(to: CGPoint(x: sliceRect.midX, y: sliceRect.midY))
         slicePath.close()
         slice.backgroundColor?.setFill()
@@ -133,7 +152,10 @@ open class FortuneWheelLayer: CALayer  {
         }
         
         //// Title  Drawing
-        let textRect = CGRect(x: (titleXValue - rotationOffset), y: (titleYPosition - rotationOffset), width: titleWidthValue, height: titleHeightValue)
+        let textRect = CGRect(x: (titleXValue - rotationOffset),
+                              y: (titleYPosition - rotationOffset),
+                              width: titleWidthValue,
+                              height: titleHeightValue)
         let textTextContent = slice.title
         
         //// Set title attributes
@@ -145,9 +167,12 @@ open class FortuneWheelLayer: CALayer  {
         let textTextHeight: CGFloat = textTextContent.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).height
         context.saveGState()
         context.clip(to: textRect)
-        textTextContent.draw(in: CGRect(x: textRect.minX, y: textRect.minY + (textRect.height - textTextHeight) / 2, width: textRect.width, height: textTextHeight), withAttributes: textFontAttributes)
-        context.restoreGState()
-
+        textTextContent.draw(in: CGRect(x: textRect.minX,
+                                        y: textRect.minY + (textRect.height - textTextHeight) / 2,
+                                        width: textRect.width,
+                                        height: textTextHeight),
+                             withAttributes: textFontAttributes)
+        
         context.restoreGState()
     }
     
@@ -158,11 +183,11 @@ open class FortuneWheelLayer: CALayer  {
         context.saveGState()
         context.translateBy(x: rotationOffset, y: rotationOffset)
         context.rotate(by: rotation * CGFloat.pi/180)
-        slice.drawAdditionalGraphics(in: context,circularSegmentHeight:circularSegmentHeight, radius: radius,sliceDegree:sectionWidthDegrees)
-        context.restoreGState()
+        slice.drawAdditionalGraphics(in: context,
+                                     circularSegmentHeight:circularSegmentHeight,
+                                     radius: radius,
+                                     sliceDegree:sectionWidthDegrees)
         
+        context.restoreGState()
     }
-    
-
-    
 }
