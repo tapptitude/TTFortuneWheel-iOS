@@ -35,15 +35,14 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
         addWheelLayer()
     }
     
-    
     override public func layoutSubviews() {
         super.layoutSubviews()
+        self.layer.needsDisplayOnBoundsChange = true
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.shadow = defaultShadow
-        
     }
     
     func sliceInfoIsValid() -> Bool {
@@ -53,6 +52,9 @@ public class TTFortuneWheel: UIControl, CAAnimationDelegate, SpinningAnimatorPro
     
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
+        if let existing = wheelLayer {
+            existing.removeFromSuperlayer()
+        }
         addWheelLayer()
         assert(sliceInfoIsValid(), "All slices must have a 360 degree combined. Set equalSlices true if you want to distribute them evenly.")
         if equalSlices {
