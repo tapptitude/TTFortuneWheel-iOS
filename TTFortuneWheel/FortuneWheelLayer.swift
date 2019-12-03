@@ -142,10 +142,16 @@ open class FortuneWheelLayer: CALayer  {
         var textFontAttributes = slice.textAttributes
         textFontAttributes[.paragraphStyle] = textStyle
         
-        let textTextHeight: CGFloat = textTextContent.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).height
+        let textBoundingRect = textTextContent.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil)
+        let textTextHeight: CGFloat = textBoundingRect.height
         context.saveGState()
-        context.clip(to: textRect)
-        textTextContent.draw(in: CGRect(x: textRect.minX, y: textRect.minY + (textRect.height - textTextHeight) / 2, width: textRect.width, height: textTextHeight), withAttributes: textFontAttributes)
+        
+        context.translateBy(x: textRect.minX, y: textRect.minY + (textRect.height - textTextHeight) / 2)
+        context.translateBy(x: textBoundingRect.width / 2, y: textBoundingRect.height / 2)
+        context.rotate(by: self.parent.titleRotation)
+        context.translateBy(x: -(textBoundingRect.width / 2), y: -(textBoundingRect.height / 2))
+        context.clip(to: CGRect(x: 0, y: 0, width: textRect.width, height: textRect.height))
+        textTextContent.draw(in: CGRect(x: 0, y: 0, width: textRect.width, height: textTextHeight), withAttributes: textFontAttributes)
         context.restoreGState()
 
         context.restoreGState()

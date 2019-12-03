@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         spinningWheel.slices = slices
         spinningWheel.equalSlices = true
         spinningWheel.frameStroke.width = 0
+        spinningWheel.titleRotation = Float.pi
         spinningWheel.slices.enumerated().forEach { (pair) in
             let slice = pair.element as! CarnivalWheelSlice
             let offset = pair.offset
